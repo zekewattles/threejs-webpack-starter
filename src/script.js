@@ -3,9 +3,6 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 // import * as dat from "dat.gui";
 
-// Canvas
-// const canvas = document.querySelector('canvas.webgl')
-
 const params = {
   enableWind: true,
   showBall: false,
