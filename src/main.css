@@ -16,8 +16,6 @@ canvas {
 }
 
 #info {
-  position: absolute;
-  bottom: 0px;
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
@@ -27,7 +25,6 @@ canvas {
   -ms-user-select: none;
   user-select: none;
   pointer-events: none;
-  z-index: 1; /* TODO Solve this in HTML */
   color: black;
 }
 
