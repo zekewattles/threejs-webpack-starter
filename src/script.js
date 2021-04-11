@@ -1,7 +1,7 @@
 import "./main.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-// import * as dat from "dat.gui";
+import * as dat from "dat.gui";
 
 const params = {
   enableWind: true,
@@ -386,9 +386,14 @@ function init() {
   controls.minDistance = 1000;
   controls.maxDistance = 5000;
 
+  // disable movement controls
+  controls.enabled = false;
+
   //
 
   window.addEventListener("resize", onWindowResize);
+
+  //
 
   // performance monitor
 
