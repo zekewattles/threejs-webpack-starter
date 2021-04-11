@@ -281,8 +281,8 @@ init();
 animate(0);
 
 function init() {
-  container = document.createElement("div");
-  document.body.appendChild(container);
+  container = document.getElementById("container");
+  // document.body.appendChild(container);
 
   // scene
 
