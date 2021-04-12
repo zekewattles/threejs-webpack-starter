@@ -1,6 +1,7 @@
 // to do: define accentColor and accentColorInverse (currently used for scene.Background and light color) & attach to scroll behavior
 
 import "./main.css";
+import "./hue.js";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "dat.gui";
