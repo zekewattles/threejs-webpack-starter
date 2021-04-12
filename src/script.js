@@ -304,7 +304,7 @@ function init() {
   // camera
 
   camera = new THREE.PerspectiveCamera(
-    7.5,
+    10,
     window.innerWidth / window.innerHeight,
     1,
     10000
