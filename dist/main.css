@@ -63,7 +63,7 @@ body {
 
 #splash {
 	position: absolute;
-	bottom: 0px;
+	/* bottom: 0px; */
   /* padding: 1rem; */
   box-sizing: border-box;
   text-align: left;
