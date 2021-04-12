@@ -6,8 +6,10 @@ set up dynamic color variables
   --fontFamily-body: "Caslon Doric", Helvetica, sans-serif;
   --fontFamily-bold: "Caslon Doric Condensed Bold", Helvetica, sans-serif;
 
-  --color-accent-hsl: hsl(0, 100%, 50%);
-  --color-accent-hsl-inverse: hsl(180, 100%, 50%);
+  --color-accent-hue: 0;
+  --color-accent-hsl: hsl(var(--color-accent-hue), 100%, 50%);
+  --color-accent-hue-inverse: 180;
+  --color-accent-hsl-inverse: hsl(var(--color-accent-hue-inverse), 100%, 50%);
 }
 
 @font-face {
@@ -89,5 +91,6 @@ body {
 .color-accent-inverse {
   color: var(--color-accent-hsl-inverse);
 }
+
 
 /*# sourceMappingURL=main.css.map*/
