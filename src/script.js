@@ -5,6 +5,12 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "dat.gui";
 
+var style = getComputedStyle(document.body);
+console.log(style.getPropertyValue("--color-accent-hue")); // get accent hue color
+console.log(style.getPropertyValue("--color-accent-hue-inverse")); // get accent hue inverse color
+// const colorAccentHue = style.getPropertyValue('--color-accent-hue')
+// const colorAccentHueInverse = style.getPropertyValue('--color-accent-hue-inverse')
+
 const params = {
   enableWind: true,
   showBall: false,
@@ -290,6 +296,8 @@ function init() {
 
   scene = new THREE.Scene();
   scene.background = new THREE.Color("hsl(0, 100%, 50%)");
+  // pulling colorAccentHue in isn't working
+  //   scene.background = new THREE.Color("hsl(colorAccentHue, 100%, 50%)");
 
   // camera
 
@@ -306,27 +314,27 @@ function init() {
   var light = new THREE.AmbientLight("hsl(180, 100%, 50%)");
   scene.add(light);
 
-//   scene.add(new THREE.AmbientLight(0x666666));
+  //   scene.add(new THREE.AmbientLight(0x666666));
 
-//   const light = new THREE.DirectionalLight(0xdfebff, 1);
-//   light.position.set(50, 200, 100);
-//   light.position.multiplyScalar(1.3);
+  //   const light = new THREE.DirectionalLight(0xdfebff, 1);
+  //   light.position.set(50, 200, 100);
+  //   light.position.multiplyScalar(1.3);
 
-//   light.castShadow = true;
+  //   light.castShadow = true;
 
-//   light.shadow.mapSize.width = 1024;
-//   light.shadow.mapSize.height = 1024;
+  //   light.shadow.mapSize.width = 1024;
+  //   light.shadow.mapSize.height = 1024;
 
-//   const d = 300;
+  //   const d = 300;
 
-//   light.shadow.camera.left = -d;
-//   light.shadow.camera.right = d;
-//   light.shadow.camera.top = d;
-//   light.shadow.camera.bottom = -d;
+  //   light.shadow.camera.left = -d;
+  //   light.shadow.camera.right = d;
+  //   light.shadow.camera.top = d;
+  //   light.shadow.camera.bottom = -d;
 
-//   light.shadow.camera.far = 1000;
+  //   light.shadow.camera.far = 1000;
 
-//   scene.add(light);
+  //   scene.add(light);
 
   // cloth material
 
@@ -436,7 +444,7 @@ function animate(now) {
   requestAnimationFrame(animate);
   simulate(now);
   render();
-  stats.update();
+  //   stats.update();
 }
 
 function render() {
