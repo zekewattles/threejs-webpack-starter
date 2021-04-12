@@ -287,7 +287,7 @@ function init() {
   // scene
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color("hsl(20, 100%, 50%)");
+  scene.background = new THREE.Color("hsl(24, 100%, 50%)");
 
   // camera
 
@@ -301,7 +301,7 @@ function init() {
 
   // lights
 
-  var light = new THREE.AmbientLight("hsl(180, 100%, 50%)");
+  var light = new THREE.AmbientLight("hsl(192, 100%, 50%)");
   scene.add(light);
 
 //   scene.add(new THREE.AmbientLight(0x666666));
