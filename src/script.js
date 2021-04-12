@@ -287,7 +287,7 @@ function init() {
   // scene
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xF15A24);
+  scene.background = new THREE.Color("hsl(20, 100%, 50%)");
 
   // camera
 
@@ -301,35 +301,38 @@ function init() {
 
   // lights
 
-  scene.add(new THREE.AmbientLight(0x666666));
-
-  const light = new THREE.DirectionalLight(0xdfebff, 1);
-  light.position.set(50, 200, 100);
-  light.position.multiplyScalar(1.3);
-
-  light.castShadow = true;
-
-  light.shadow.mapSize.width = 1024;
-  light.shadow.mapSize.height = 1024;
-
-  const d = 300;
-
-  light.shadow.camera.left = -d;
-  light.shadow.camera.right = d;
-  light.shadow.camera.top = d;
-  light.shadow.camera.bottom = -d;
-
-  light.shadow.camera.far = 1000;
-
+  var light = new THREE.AmbientLight("hsl(180, 100%, 50%)");
   scene.add(light);
+
+//   scene.add(new THREE.AmbientLight(0x666666));
+
+//   const light = new THREE.DirectionalLight(0xdfebff, 1);
+//   light.position.set(50, 200, 100);
+//   light.position.multiplyScalar(1.3);
+
+//   light.castShadow = true;
+
+//   light.shadow.mapSize.width = 1024;
+//   light.shadow.mapSize.height = 1024;
+
+//   const d = 300;
+
+//   light.shadow.camera.left = -d;
+//   light.shadow.camera.right = d;
+//   light.shadow.camera.top = d;
+//   light.shadow.camera.bottom = -d;
+
+//   light.shadow.camera.far = 1000;
+
+//   scene.add(light);
 
   // cloth material
 
   const loader = new THREE.TextureLoader();
-  const clothTexture = loader.load("/images/apluse_flip_color.png");
+  const clothTexture = loader.load("/images/apluse_flip_white.png");
   clothTexture.anisotropy = 16;
 
-  const clothMaterial = new THREE.MeshLambertMaterial({
+  const clothMaterial = new THREE.MeshToonMaterial({
     map: clothTexture,
     side: THREE.DoubleSide,
     alphaTest: 0.5,
