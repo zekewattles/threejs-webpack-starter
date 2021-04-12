@@ -1,3 +1,5 @@
+// to do: define accentColor and accentColorInverse (currently used for scene.Background and light color) & attach to scroll behavior
+
 import "./main.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
@@ -287,7 +289,7 @@ function init() {
   // scene
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color("hsl(24, 100%, 50%)");
+  scene.background = new THREE.Color("hsl(0, 100%, 50%)");
 
   // camera
 
@@ -301,7 +303,7 @@ function init() {
 
   // lights
 
-  var light = new THREE.AmbientLight("hsl(192, 100%, 50%)");
+  var light = new THREE.AmbientLight("hsl(180, 100%, 50%)");
   scene.add(light);
 
 //   scene.add(new THREE.AmbientLight(0x666666));

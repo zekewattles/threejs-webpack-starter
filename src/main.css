@@ -1,8 +1,14 @@
 /*
 TO DO
-load custom fonts
+set up dynamic color variables
 */
+:root {
+  --fontFamily-body: "Caslon Doric", Helvetica, sans-serif;
+  --fontFamily-bold: "Caslon Doric Condensed Bold", Helvetica, sans-serif;
 
+  --color-accent-hsl: hsl(0, 100%, 50%);
+  --color-accent-hsl-inverse: hsl(180, 100%, 50%);
+}
 
 @font-face {
   font-family: "Caslon Doric";
@@ -36,11 +42,6 @@ load custom fonts
   font-weight: bold;
 }
 
-/* :root {
-  --fontFamilyBody: Caslon Doric, Helvetica, sans-serif;
-  --fontFamilyHeader: Caslon Doric Condensed, Helvetica, sans-serif;
-} */
-
 * {
   margin: 0;
   padding: 0;
@@ -53,18 +54,11 @@ html {
 }
 
 body {
-	font-family: "Caslon Doric", sans-serif;
+  font-family: "Caslon Doric", sans-serif;
 }
 
-/* canvas {
-  width: 100vw;
-  height: 100vh;
-} */
-
 #splash {
-	position: absolute;
-	/* bottom: 0px; */
-  /* padding: 1rem; */
+  position: absolute;
   box-sizing: border-box;
   text-align: left;
   -moz-user-select: none;
@@ -82,4 +76,16 @@ body {
   height: 100vh;
   align-items: center;
   justify-content: center;
+}
+
+.color-accent {
+  color: var(--color-accent-hsl);
+}
+
+.color-accent-bg {
+  background-color: var(--color-accent-hsl);
+}
+
+.color-accent-inverse {
+  color: var(--color-accent-hsl-inverse);
 }
