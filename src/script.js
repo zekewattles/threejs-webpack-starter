@@ -292,17 +292,19 @@ function init() {
   container = document.getElementById("container");
   // document.body.appendChild(container);
 
+  //   const colorAccentHuePercentage = Math.round((colorAccentHue / 360) * 100);
+
   // scene
 
   scene = new THREE.Scene();
   scene.background = new THREE.Color("hsl(0, 100%, 50%)");
   // pulling colorAccentHue in isn't working
-  //   scene.background = new THREE.Color("hsl(colorAccentHue, 100%, 50%)");
+  //   scene.background = new THREE.Color("hsl(Math.round((${colorAccentHue}% / 360) * 100), 100%, 50%)");
 
   // camera
 
   camera = new THREE.PerspectiveCamera(
-    10,
+    7.5,
     window.innerWidth / window.innerHeight,
     1,
     10000
