@@ -1,15 +1,10 @@
-/*
-TO DO
-set up dynamic color variables
-*/
 :root {
-  --fontFamily-body: "Caslon Doric", Helvetica, sans-serif;
-  --fontFamily-bold: "Caslon Doric Condensed Bold", Helvetica, sans-serif;
-
   --color-accent-hue: 0;
   --color-accent-hsl: hsl(var(--color-accent-hue), 100%, 50%);
   --color-accent-hue-inverse: 180;
   --color-accent-hsl-inverse: hsl(var(--color-accent-hue-inverse), 100%, 50%);
+  /* --fontFamily-body: "Caslon Doric", Helvetica, sans-serif;
+  --fontFamily-bold: "Caslon Doric Condensed Bold", Helvetica, sans-serif; */
 }
 
 @font-face {
@@ -63,25 +58,27 @@ body {
   position: absolute;
   box-sizing: border-box;
   text-align: left;
-  -moz-user-select: none;
+  /* -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  pointer-events: none;
+  pointer-events: none; */
   color: white;
+  z-index: 1;
 }
 
 #wind-speed {
   position: absolute;
   box-sizing: border-box;
   text-align: right;
-  right: 0;
-  -moz-user-select: none;
+  bottom: 0;
+  /* -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  pointer-events: none;
+  pointer-events: none; */
   color: white;
+  z-index: 1;
 }
 
 .sticky-header {
@@ -104,5 +101,21 @@ body {
 .color-accent-inverse {
   color: var(--color-accent-hsl-inverse);
 }
+
+.btn-outline-primary {
+  color: white;
+  border-color: white;
+  border-radius: 100px;
+  background-color: none;
+  border: 2px solid white;
+  padding: 0.375rem 0.75rem;
+}
+
+.btn-outline-primary:hover {
+  color: var(--color-accent-hsl);
+  background-color: white;
+  border-color: white;
+}
+
 
 /*# sourceMappingURL=main.css.map*/

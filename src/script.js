@@ -4,7 +4,7 @@ import "./main.css";
 import "./hue.js";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import * as dat from "dat.gui";
+// import * as dat from "dat.gui";
 
 var style = getComputedStyle(document.body);
 console.log(style.getPropertyValue("--color-accent-hue")); // get accent hue color
@@ -279,7 +279,8 @@ function togglePins() {
   pins = pinsFormation[~~(Math.random() * pinsFormation.length)];
 }
 
-let container, stats;
+// let container, stats;
+let container;
 let camera, scene, renderer;
 
 let clothGeometry;
