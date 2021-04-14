@@ -17,3 +17,10 @@ document.addEventListener("scroll", (e) => {
 
   console.log({ range, rangeInverted });
 });
+
+// wind speed
+
+const speedElem = document.getElementById("wind-speed-number");
+setInterval(() => {
+  speedElem.innerHTML = Math.floor(Math.random() * 17) + 1;
+}, 2000);

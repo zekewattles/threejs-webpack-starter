@@ -1,16 +1,8 @@
-// to do: define accentColor and accentColorInverse (currently used for scene.Background and light color) & attach to scroll behavior
-
 import "./main.css";
 import "./hue.js";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 // import * as dat from "dat.gui";
-
-var style = getComputedStyle(document.body);
-console.log(style.getPropertyValue("--color-accent-hue")); // get accent hue color
-console.log(style.getPropertyValue("--color-accent-hue-inverse")); // get accent hue inverse color
-// const colorAccentHue = style.getPropertyValue('--color-accent-hue')
-// const colorAccentHueInverse = style.getPropertyValue('--color-accent-hue-inverse')
 
 const params = {
   enableWind: true,
@@ -291,17 +283,15 @@ init();
 animate(0);
 
 function init() {
+  console.log("running init");
   container = document.getElementById("container");
   // document.body.appendChild(container);
-
-  //   const colorAccentHuePercentage = Math.round((colorAccentHue / 360) * 100);
 
   // scene
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color("hsl(0, 100%, 50%)");
-  // pulling colorAccentHue in isn't working
-  //   scene.background = new THREE.Color("hsl(Math.round((${colorAccentHue}% / 360) * 100), 100%, 50%)");
+  // scene.background = new THREE.Color("hsl(0, 100%, 50%)");
+  // scene.background = new THREE.Color(`hsl(${colorAccentHue}, 100%, 50%)`);
 
   // camera
 
@@ -315,30 +305,11 @@ function init() {
 
   // lights
 
-  var light = new THREE.AmbientLight("hsl(180, 100%, 50%)");
-  scene.add(light);
-
-  //   scene.add(new THREE.AmbientLight(0x666666));
-
-  //   const light = new THREE.DirectionalLight(0xdfebff, 1);
-  //   light.position.set(50, 200, 100);
-  //   light.position.multiplyScalar(1.3);
-
-  //   light.castShadow = true;
-
-  //   light.shadow.mapSize.width = 1024;
-  //   light.shadow.mapSize.height = 1024;
-
-  //   const d = 300;
-
-  //   light.shadow.camera.left = -d;
-  //   light.shadow.camera.right = d;
-  //   light.shadow.camera.top = d;
-  //   light.shadow.camera.bottom = -d;
-
-  //   light.shadow.camera.far = 1000;
-
-  //   scene.add(light);
+  // var light = new THREE.AmbientLight("hsl(180, 100%, 50%)");
+  // var light = new THREE.AmbientLight(
+  //   `hsl(${colorAccentHueInverse}, 100%, 50%)`
+  // );
+  // scene.add(light);
 
   // cloth material
 
@@ -465,6 +436,23 @@ function render() {
   clothGeometry.computeVertexNormals();
 
   sphere.position.copy(ballPosition);
+
+  // get and define variables for colorAccent and colorAccentHue
+
+  var style = getComputedStyle(document.body);
+  console.log(style.getPropertyValue("--color-accent-hue")); // get accent hue color
+  console.log(style.getPropertyValue("--color-accent-hue-inverse")); // get accent hue inverse color
+  const colorAccentHue = style.getPropertyValue("--color-accent-hue");
+  const colorAccentHueInverse = style.getPropertyValue(
+    "--color-accent-hue-inverse"
+  );
+
+  scene.background = new THREE.Color(`hsl(${colorAccentHue}, 100%, 50%)`);
+
+  var light = new THREE.AmbientLight(
+    `hsl(${colorAccentHueInverse}, 100%, 50%)`
+  );
+  scene.add(light);
 
   renderer.render(scene, camera);
 }
