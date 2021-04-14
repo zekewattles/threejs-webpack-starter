@@ -305,11 +305,8 @@ function init() {
 
   // lights
 
-  // var light = new THREE.AmbientLight("hsl(180, 100%, 50%)");
-  // var light = new THREE.AmbientLight(
-  //   `hsl(${colorAccentHueInverse}, 100%, 50%)`
-  // );
-  // scene.add(light);
+  var light = new THREE.AmbientLight("hsl(180, 100%, 50%)");
+  scene.add(light);
 
   // cloth material
 
@@ -449,10 +446,12 @@ function render() {
 
   scene.background = new THREE.Color(`hsl(${colorAccentHue}, 100%, 50%)`);
 
-  var light = new THREE.AmbientLight(
-    `hsl(${colorAccentHueInverse}, 100%, 50%)`
-  );
-  scene.add(light);
+
+  // this isn't working
+  // var light = new THREE.AmbientLight(
+  //   `hsl(${colorAccentHueInverse}, 100%, 50%)`
+  // );
+  // scene.add(light);
 
   renderer.render(scene, camera);
 }
