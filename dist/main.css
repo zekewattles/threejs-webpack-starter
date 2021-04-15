@@ -54,6 +54,11 @@ body {
   font-family: "Caslon Doric", sans-serif;
 }
 
+.font-header {
+  font-family: "Caslon Doric Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
 #splash {
   position: absolute;
   box-sizing: border-box;
