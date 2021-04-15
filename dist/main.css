@@ -3,8 +3,11 @@
   --color-accent-hsl: hsl(var(--color-accent-hue), 100%, 50%);
   --color-accent-hue-inverse: 180;
   --color-accent-hsl-inverse: hsl(var(--color-accent-hue-inverse), 100%, 50%);
-  /* --fontFamily-body: "Caslon Doric", Helvetica, sans-serif;
-  --fontFamily-bold: "Caslon Doric Condensed Bold", Helvetica, sans-serif; */
+
+  --rotateX: 0deg;
+  --rotateY: 0deg;
+  --perspective: 200px;
+  --textDistance: 90px;
 }
 
 @font-face {
@@ -54,22 +57,17 @@ body {
   font-family: "Caslon Doric", sans-serif;
 }
 
-.font-header {
-  font-family: "Caslon Doric Condensed", sans-serif;
-  text-transform: uppercase;
-}
-
 #splash {
   position: absolute;
   box-sizing: border-box;
   text-align: left;
+  color: white;
+  z-index: 1;
   /* -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
   pointer-events: none; */
-  color: white;
-  z-index: 1;
 }
 
 #wind-speed {
@@ -77,13 +75,13 @@ body {
   box-sizing: border-box;
   text-align: right;
   bottom: 0;
+  color: white;
+  z-index: 1;
   /* -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
   pointer-events: none; */
-  color: white;
-  z-index: 1;
 }
 
 .sticky-header {
@@ -122,5 +120,107 @@ body {
   border-color: white;
 }
 
+.font-header {
+  font-family: "Caslon Doric Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+/* perspective classes */
+
+.perspective-outer {
+  perspective: var(--perspective);
+  display: inline-block;
+}
+
+.perspective-inner {
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rotateX)) rotateY(var(--rotateY));
+}
+
+.perspective-inner-front {
+  display: inline-block;
+  transform: translateZ(var(--textDistance));
+}
+
+.perspective-inner-back {
+  display: inline-block;
+  transform: translateZ(calc(-1 * var(--textDistance)));
+}
+
+/* controls */
+
+#toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  background-color: none;
+  display: flex;
+  align-items: right;
+  justify-content: space-between;
+  z-index: 2;
+  border-radius: 10rem;
+  border: none;
+  text-decoration: none;
+  /* make it so you can't select text */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#toggle:hover {
+  cursor: pointer;
+}
+
+.controls {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 2;
+  /* make it so you can't select text */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1.5px solid lightgray;
+  border-radius: 0.5rem;
+  background-color: rgba(248,249,250,0.7);
+}
+
+.controls.is-hidden {
+  display: none;
+}
+
+.control input {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2rem;
+  background: rgba(108,117,125,0.2);
+  outline: none;
+  border-radius: 0;
+}
+
+.control input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-accent-hsl);
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.control input::-moz-range-thumb {
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-accent-hsl);
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
 
 /*# sourceMappingURL=main.css.map*/

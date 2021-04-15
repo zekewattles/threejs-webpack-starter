@@ -13,6 +13,42 @@
     />
   </head>
   <body>
+
+    <a id="toggle">🛠</a>
+    <div class="controls is-hidden" id="controls">
+      <div class="row p-3">
+        <div class="control col-md-6 mb-3">
+          <div>
+            <small>Perspective&nbsp;</small>
+          </div>
+          <input
+            id="perspective"
+            type="range"
+            min="100"
+            max="1000"
+            step="10"
+            value="200"
+            class="rounded-0"
+          />
+        </div>
+        <div class="control col-md-6 mb-3">
+          <div>
+            <small>Text distance&nbsp;</small>
+          </div>
+          <input
+            id="textDistance"
+            type="range"
+            min="-200"
+            max="200"
+            step="5"
+            value="85"
+            class="rounded-0"
+          />
+        </div>
+      </div>
+    </div>
+
+
     <div id="container">
       <div id="splash">
         <div class="container-fluid p-3">
