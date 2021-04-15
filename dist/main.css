@@ -6,8 +6,8 @@
 
   --rotateX: 0deg;
   --rotateY: 0deg;
-  --perspective: 200px;
-  --textDistance: 90px;
+  --perspective: 300px;
+  --textDistance: 75px;
 }
 
 @font-face {
