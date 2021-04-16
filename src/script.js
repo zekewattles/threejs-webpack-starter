@@ -312,7 +312,7 @@ function init() {
   // cloth material
 
   const loader = new THREE.TextureLoader();
-  const clothTexture = loader.load("/images/apluse-03.png");
+  const clothTexture = loader.load("/images/apluse.png");
   clothTexture.anisotropy = 16;
 
   const clothMaterial = new THREE.MeshToonMaterial({
